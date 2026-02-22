@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Train Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background: #f4f4f9; }
+        h1 { color: #2c3e50; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background: #2c3e50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Available Trains</h1>
+    <p th:text="'From: ' + ${from} + ' → To: ' + ${to} + ', Date: ' + ${date} + ', Class: ' + ${trainClass}"></p>
+
+    <table>
+        <tr>
+            <th>Train No</th>
+            <th>Name</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Availability</th>
+        </tr>
+        <!-- Example static data, replace with database results later -->
+        <tr>
+            <td>123</td>
+            <td>Express 1</td>
+            <td>08:00</td>
+            <td>12:00</td>
+            <td>Available</td>
+        </tr>
+        <tr>
+            <td>456</td>
+            <td>Express 2</td>
+            <td>10:00</td>
+            <td>14:00</td>
+            <td>Full</td>
+        </tr>
+    </table>
+</body>
+</html>

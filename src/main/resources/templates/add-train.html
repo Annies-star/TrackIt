@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Train</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff512f, #dd2476);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-box {
+            background: white;
+            color: black;
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #dd2476;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🚆 Add New Train</h1>
+
+<div class="form-box">
+
+<form th:action="@{/save}" th:object="${train}" method="post">
+
+    <input type="text" th:field="*{trainName}" placeholder="Train Name" required><br>
+
+    <input type="text" th:field="*{source}" placeholder="Source" required><br>
+
+    <input type="text" th:field="*{destination}" placeholder="Destination" required><br>
+
+    <input type="number" th:field="*{seats}" placeholder="Seats" required><br>
+
+    <button type="submit">💾 Save</button>
+
+</form>
+
+<a href="/">⬅ Back to Home</a>
+
+</div>
+
+</body>
+</html>
